@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="UTF-8">
+    <title>QuizApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>QuizApp</h1>
+    </header>
+    <main class="main">
+        <form class="form">
+            <img src="./pictures/logo.svg" alt="logo picture">
+            <div>
+                <h2>Matin Kiani QuizApp</h2>
+                
+                <span></span>
+                
+                <div>
+                    <label for="categorySelect">In which category do you want to play the quiz?</label>
+                    <select name="category-select" id="categorySelect">
+                        <option value="Any Category">Any Category</option>
+                        <option value="General Knowledge">General Knowledge</option>
+                        <option value="History">History</option>
+                        <option value="Computers">Computers</option>
+                        <option value="Math">Math</option>
+                        <option value="Science">Science</option>
+                        <option value="Geography">Geography</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="questionsNumberSelect">How many questions do you want in your quiz?</label>
+                    <select name="questions-number-select" id="questionsNumberSelect"></select>
+                </div>
+                    
+                <div>
+                    <label for="difficultySelect">How difficult do you want your quiz to be?</label>
+                    <select name="difficulty-select" id="difficultySelect">
+                        <option value="Any Difficulty">Any Difficulty</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="">Please select the countdown time for your quiz:</label>
+                    <div>
+                        <input type="number" min="0" name="hours-input" id="hoursInput" placeholder="hours" onclick="timerInputClick(event)" onchange="timerInputChange(event)" required>
+                        <span>:</span>
+                        <input type="number" min="0" max="59" name="minutes-input" id="minutesInput" placeholder="minutes" onclick="timerInputClick(event)" onchange="timerInputChange(event)" required>
+                        <span>:</span>
+                        <input type="number" min="0" max="59" name="seconds-input" id="secondsInput" placeholder="seconds" onclick="timerInputClick(event)" onchange="timerInputChange(event)" required>
+                    </div>
+                </div>
+
+                <span></span>
+
+                <button class="form__button">
+                    <img src="./pictures/play-icon.svg" alt="play-icon">
+                    <span>Play Now</span>
+                </button>
+            </div>
+        </form>
+    </main>
+    
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
