@@ -61,22 +61,27 @@ const updateTimer = () => {
   if (localStorage.getItem('timer').substring(6, 8) > 0) {
     // کم کردن مقدار 1 از ثانیه‌شمار تایمر
     document.getElementById('secondsShow').innerText = String(Number(localStorage.getItem('timer').substring(6, 8)) - 1).padStart(2, '0');
+    localStorage.setItem('timer', `${localStorage.getItem('timer').subString(0, 2).padStart(2, '0')}:${localStorage.getItem('timer').subString(3, 5).padStart(2, '0')}:${String(Number(localStorage.getItem('timer').subString(6, 8)) - 1).padStart(2, '0')}`);
   
   } else {
     // رساندن مقدار ثانیه‌شمار تایمر از 1 به 59
     document.getElementById('secondsShow').innerText = 59;
+    localStorage.setItem('timer', `${localStorage.getItem('timer').subString(0, 2).padStart(2, '0')}:${localStorage.getItem('timer').subString(3, 5).padStart(2, '0')}:59`);
 
     if (localStorage.getItem('timer').substring(3, 5) > 0) {
       // کم کردن مقدار 1 از دقیقه‌شمار تایمر
       document.getElementById('minutesShow').innerText = String(Number(localStorage.getItem('timer').substring(3, 5)) - 1).padStart(2, '0');
+      localStorage.setItem('timer', `${localStorage.getItem('timer').subString(0, 2).padStart(2, '0')}:${String(Number(localStorage.getItem('timer').subString(3, 5)) - 1).padStart(2, '0')}:${localStorage.getItem('timer').subString(6, 8).padStart(2, '0')}`);
     
     } else {
       // رساندن مقدار دقیقه‌شمار تایمر از 1 به 59
       document.getElementById('minutesShow').innerText = 59;
+      localStorage.setItem('timer', `${localStorage.getItem('timer').subString(0, 2).padStart(2, '0')}:59:${localStorage.getItem('timer').subString(6, 8).padStart(2, '0')}`);
 
       if (localStorage.getItem('timer').substring(0, 2) > 0) {
         // کم کردن مقدار 1 از ساعت‌شمار تایمر
         document.getElementById('hoursShow').innerText = String(Number(localStorage.getItem('timer').substring(0, 2)) - 1).padStart(2, '0');
+        localStorage.setItem('timer', `${String(Number(localStorage.getItem('timer').subString(0, 2)) - 1).padStart(2, '0')}:${localStorage.getItem('timer').subString(3, 5).padStart(2, '0')}:${localStorage.getItem('timer').subString(6, 8).padStart(2, '0')}`);
       
       } else {
         // اتمام آزمون (مقدار 00:00:00 برای تایمر)
@@ -87,9 +92,6 @@ const updateTimer = () => {
       }
     }
   }
-
-  // ذخیره سازی مقادیر جدید تایمر در لوکال استوریج
-  localStorage.setItem('timer', `${String(Number(document.getElementById('hoursShow').innerText)).padStart(2, '0')}:${String(Number(document.getElementById('minutesShow').innerText)).padStart(2, '0')}:${String(Number(document.getElementById('secondsShow').innerText)).padStart(2, '0')}`);
 };
 
 // آپدیت کردن تایمر پس از رفرش صفحه (تا تایمر با رفرش قفل نکند)
