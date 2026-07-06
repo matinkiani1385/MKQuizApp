@@ -58,25 +58,25 @@ document.getElementById('secondsShow').innerText = localStorage.getItem('timer')
   آپدیت کردن مقادیر تایمر
 */
 const updateTimer = () => {
-  if (document.getElementById('secondsShow').innerText > 0) {
+  if (localStorage.getItem('timer').substring(6, 8) > 0) {
     // کم کردن مقدار 1 از ثانیه‌شمار تایمر
-    document.getElementById('secondsShow').innerText = String(Number(document.getElementById('secondsShow').innerText) - 1).padStart(2, '0');
+    document.getElementById('secondsShow').innerText = String(Number(localStorage.getItem('timer').substring(6, 8)) - 1).padStart(2, '0');
   
   } else {
     // رساندن مقدار ثانیه‌شمار تایمر از 1 به 59
     document.getElementById('secondsShow').innerText = 59;
 
-    if (document.getElementById('minutesShow').innerText > 0) {
+    if (localStorage.getItem('timer').substring(3, 5) > 0) {
       // کم کردن مقدار 1 از دقیقه‌شمار تایمر
-      document.getElementById('minutesShow').innerText = String(Number(document.getElementById('minutesShow').innerText) - 1).padStart(2, '0');
+      document.getElementById('minutesShow').innerText = String(Number(localStorage.getItem('timer').substring(3, 5)) - 1).padStart(2, '0');
     
     } else {
       // رساندن مقدار دقیقه‌شمار تایمر از 1 به 59
       document.getElementById('minutesShow').innerText = 59;
 
-      if (document.getElementById('hoursShow').innerText > 0) {
+      if (localStorage.getItem('timer').substring(0, 2) > 0) {
         // کم کردن مقدار 1 از ساعت‌شمار تایمر
-        document.getElementById('hoursShow').innerText = String(Number(document.getElementById('hoursShow').innerText) - 1).padStart(2, '0');
+        document.getElementById('hoursShow').innerText = String(Number(localStorage.getItem('timer').substring(0, 2)) - 1).padStart(2, '0');
       
       } else {
         // اتمام آزمون (مقدار 00:00:00 برای تایمر)
