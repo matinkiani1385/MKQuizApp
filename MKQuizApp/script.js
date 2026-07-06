@@ -19,17 +19,6 @@ for (let i = 0; i < MAX_QUESTIONS; i++) {
 questionsNumberSelect.value = '5';
 
 /*
-    هنگامی که کاربر روی اینپوت‌های تایمر کلیک می‌کند
-*/
-const timerInputClick = (event) => {
-    // اگراینپوت خالی باشد، به جای پلیس هولدر، مقدار صفر می‌نشیند
-    if (event.currentTarget.value === '') {
-        event.currentTarget.value = 0;
-        timerInputChange(event);
-    }
-};
-
-/*
     هنگامی که کاربر مقدار اینپوت‌های تایمر را تغییر می‌دهد
 */
 const timerInputChange = (event) => {
