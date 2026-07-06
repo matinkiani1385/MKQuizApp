@@ -99,7 +99,7 @@ updateTimer();
 const timer = setInterval(updateTimer, 1000);
 
 // شمار سوال
-let qNo = localStorage.getItem('qNo') || 1;
+let qNo = Number(localStorage.getItem('qNo')) || 1;
 
 // صورت سوال
 let question = questions[qNo - 1]['question'];
